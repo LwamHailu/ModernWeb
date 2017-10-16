@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+    <h4  lightBlue>This is my home page!</h4>
+  </h1>
+  <div *ngIf="visible;then lulu else hailu">it works!</div>
+ <button (click)="toggleDiv()" lightBlue>Toggle</button>
+ <ul *ngFor='let data of recordFile;let i=index;'>
+   <li>{{i}}.{{data.name}}-{{data.age}}</li>
+ </ul>
+<ng-template #lulu>Lwam shikor</ng-template>
+<ng-template #hailu>Hailu halale</ng-template>
+Hello:{{userName}}<br>
+<input type='text' [(ngModel)]="userName">
+</div>
+
