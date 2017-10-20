@@ -1,0 +1,26 @@
+<div class="container">
+
+ <form #form="ngForm" (ngSubmit)="add(form.value)" novalidate >
+<label for="name">Product Id</label>
+<input type="text" class="form-control" name='productId'  ngModel required [(ngModel)]="product.productId" name="productId" #productId="ngModel">
+<br><div class="alert alert-danger" *ngIf="productId.touched && !productId.valid">
+<div *ngIf="productId.errors.required">Product id is required.</div></div>
+
+<label for="name">Product Model</label>
+<input type="text" class="form-control" id="productModel"  [(ngModel)]="product.productModel" name="productModel"
+               #productModel="ngModel">
+<label for="name">Product Year</label>
+<input type="text" class="form-control" id="productYear"  [(ngModel)]="product.productYear" name="productYear"
+               #productYear="ngModel">               
+  <label for="name">Product Price</label>
+<input type="text" class="form-control" id="price"  [(ngModel)]="product.price" name="price"
+               #price="ngModel"> <br>
+               
+ <input type="submit" value="Add">      
+ </form>
+ <br>
+    
+ <pre>{{form.value | json }} && {{form.validId}}</pre> 
+
+    
+</div>
